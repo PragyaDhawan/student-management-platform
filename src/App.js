@@ -9,10 +9,6 @@ export default function App() {
     <Router>
       <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
-      <nav className="bg-white shadow-md rounded-full flex justify-center p-4 gap-6 my-6 mx-auto w-fit">
-          <NavLink to="/students" className="px-4 py-2 rounded-full hover:bg-blue-100 transition">Students</NavLink>
-          <NavLink to="/chat" className="px-4 py-2 rounded-full hover:bg-blue-100 transition">Chat</NavLink>
-      </nav>
 
       <div className="flex-1 flex items-center justify-center p-4">
           <div className="bg-white shadow-2xl rounded-3xl p-8 w-full max-w-6xl">

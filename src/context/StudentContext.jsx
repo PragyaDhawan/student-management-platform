@@ -9,6 +9,13 @@ export function useStudents() {
 
 export function StudentProvider({ children }) {
   const [students, setStudents] = useState(() => {
+    const isSessionStarted = sessionStorage.getItem('sessionStarted');
+
+    if (!isSessionStarted) {
+      sessionStorage.setItem('sessionStarted', 'true');
+      localStorage.removeItem('students');
+    }
+    
     const saved = localStorage.getItem('students');
     return saved ? JSON.parse(saved) : [];
   });

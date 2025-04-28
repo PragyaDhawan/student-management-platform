@@ -8,6 +8,13 @@ export function useChat() {
 
 export function ChatProvider({ children }) {
   const [conversations, setConversations] = useState(() => {
+    const isSessionStarted = sessionStorage.getItem('sessionStarted');
+
+    if (!isSessionStarted) {
+      sessionStorage.setItem('sessionStarted', 'true');
+      localStorage.removeItem('conversations');
+    }
+
     const saved = localStorage.getItem('conversations');
     return saved
       ? JSON.parse(saved)

@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Student Management Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive Single Page Application (SPA) built using **React** and **TailwindCSS**, simulating a simple **Student Management System** with student data management and advisor-student chat interface.  
+All data is handled **inside the browser** (no backend), using **React Context API** and **LocalStorage** for persistence.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Project Overview
 
-### `npm start`
+The platform provides:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Student Management**:  
+  View, add, search, and sort students in a responsive data table.
+  
+- **Advisor-Student Chat Interface**:  
+  Simulate simple messaging between students and advisors, visually distinguishing sent and received messages.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Navigation**:  
+  Easily switch between **Students** and **Chat** sections using a sticky header navigation bar.
 
-### `npm test`
+- **Responsive Design**:  
+  Optimized for mobile, tablet, and desktop screen sizes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Polished UI**:  
+  Clean, modern Framer-like look using TailwindCSS.
 
-### `npm run build`
+- **Session Persistence**:  
+  Students and chats are saved using `localStorage`, so they survive page reloads.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Follow these simple steps to run the project locally:
 
-### `npm run eject`
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/PragyaDhawan/student-management-platform.git
+   cd student-management-platform
+2. **Install dependencies**:
+    npm install
+3. **Start the development server**:
+    npm start
+4. **Open your browser and visit**:
+    http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Approach
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Technology Choices
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **React**
+- **TailwindCSS**
+- **React Router**
+- **Context API + LocalStorage**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### Core Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Feature | Approach |
+|:---|:---|
+| **Student Management** | A searchable table displaying student data. New students can be added via a validated form. |
+| **Chat Interface** | Simulated messaging between advisor and students, with sent and received messages visually distinguished. |
+| **Responsive Design** | Layout adapts across mobile, tablet, and desktop using Tailwind’s responsive utilities (`sm:`, `md:`, `lg:`). |
+| **Persistence** | Data is stored in browser LocalStorage through `useEffect`, making it survive page reloads. |
+| **Navigation** | A sticky header with route-based navigation ensures a consistent experience across views. |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Design Decisions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Lightweight State Management**: Used Context API for simplicity.
+- **Component Reusability**: Separated concerns into distinct, reusable components (Header, Footer, StudentTable, Chat).
+- **Clean UX**: Added form validation, success/error messaging, auto-clearing alerts, and smooth transitions for a professional feel.
+- **Scalable Structure**: The project folder structure is designed to scale easily if features like authentication or backend integration are added later.
